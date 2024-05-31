@@ -40,3 +40,20 @@ sumNumbers(40, 26);
 sumNumbers(24, 8);
 
 printName('Carlos', 23);
+
+//Funciones de Flecha
+function getSum(numberA, numberB) {
+  console.log(numberA + numberB);
+}
+
+getSum(5, 2);
+
+const getSum2 = (numberA, numberB) => {
+  console.log(numberA + numberB);
+};
+
+getSum2(4, 2);
+
+const doubleNumber = number => number * 2;
+
+//const nombreFuncion = parametros => llaves
