@@ -159,56 +159,14 @@ console.log(wordWithDash('Lucas', 'Carlos'));
 // Función que reciba una palabra de 5 letras y te diga quantas vocales tiene
 
 const checkVocalWord = word => {
+  const isVocal = char => char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u';
   let counterSize = 0;
-  if (
-    word.charAt(0) === 'a' ||
-    word.charAt(0) === 'e' ||
-    word.charAt(0) === 'i' ||
-    word.charAt(0) === 'o' ||
-    word.charAt(0) === 'u'
-  ) {
-    counterSize++;
-  }
 
-  if (
-    word.charAt(1) === 'a' ||
-    word.charAt(1) === 'e' ||
-    word.charAt(1) === 'i' ||
-    word.charAt(1) === 'o' ||
-    word.charAt(1) === 'u'
-  ) {
-    counterSize++;
-  }
-
-  if (
-    word.charAt(2) === 'a' ||
-    word.charAt(2) === 'e' ||
-    word.charAt(2) === 'i' ||
-    word.charAt(2) === 'o' ||
-    word.charAt(2) === 'u'
-  ) {
-    counterSize++;
-  }
-
-  if (
-    word.charAt(3) === 'a' ||
-    word.charAt(3) === 'e' ||
-    word.charAt(3) === 'i' ||
-    word.charAt(3) === 'o' ||
-    word.charAt(3) === 'u'
-  ) {
-    counterSize++;
-  }
-
-  if (
-    word.charAt(4) === 'a' ||
-    word.charAt(4) === 'e' ||
-    word.charAt(4) === 'i' ||
-    word.charAt(4) === 'o' ||
-    word.charAt(4) === 'u'
-  ) {
-    counterSize++;
-  }
+  counterSize += isVocal(word.charAt(0)) ? 1 : 0;
+  counterSize += isVocal(word.charAt(1)) ? 1 : 0;
+  counterSize += isVocal(word.charAt(2)) ? 1 : 0;
+  counterSize += isVocal(word.charAt(3)) ? 1 : 0;
+  counterSize += isVocal(word.charAt(4)) ? 1 : 0;
 
   console.log(counterSize);
 };
@@ -217,10 +175,27 @@ checkVocalWord('raton');
 
 // Función que reciba una palabra de 5 letras y la imprima al reves, adios -> soidA
 
-const checkVocals = vocal => {};
+const revertWord = word => {
+  if (word.length !== 5) {
+    console.log('La palabra debe contener 5 letras!');
+  }
 
-const revertWord = word => {};
-
-revertWord('');
+  const reversed = word.charAt(4) + word.charAt(3) + word.charAt(2) + word.charAt(1) + word.charAt(0);
+  console.log(reversed);
+};
+revertWord('Adiós');
 
 // Crea una funcion llamada sumDigits que tome un número de 3 cifras como parámetro y devuelva la suma de sus digitos
+
+const sumDigits = number => {
+  if (number < 100 || number > 999) {
+    console.log('El número debe tener exactamente 3 cifras');
+  }
+
+  const number1 = Math.floor(number / 100);
+  const number2 = Math.floor((number % 100) / 10);
+  const number3 = number % 10;
+
+  console.log(number1 + number2 + number3);
+};
+sumDigits(456);
