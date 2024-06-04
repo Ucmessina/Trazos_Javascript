@@ -1,0 +1,21 @@
+LiveServer
+
+
+Prettier:
+    Code-preferences-settings -> Prettier in search
+
+
+    - Prettier: Arrow Parens Change to avoid
+    - Prettier: Jsx Single Quote  V
+    - Prettier: Print Width       120
+    - Prettier: Single Quote      V
+    - Prettier: Trailing Comma    none
+
+
+    en js - Format document with - another - prettier
+    Code-preferences-settings -> Format
+
+    - Editor: Format On Save    V
+
+
+Error Lens
