@@ -158,26 +158,28 @@ console.log(wordWithDash('Lucas', 'Carlos'));
 
 // Función que reciba una palabra de 5 letras y te diga quantas vocales tiene
 
-const checkVocalWord = word => {
-  const isVocal = char => char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u';
+const checkVowelsWord = word => {
+  //const vowel = 'aeiouAEIOU';  -> with includes function
+  const isVowel = char => char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u';
   let counterSize = 0;
 
-  counterSize += isVocal(word.charAt(0)) ? 1 : 0;
-  counterSize += isVocal(word.charAt(1)) ? 1 : 0;
-  counterSize += isVocal(word.charAt(2)) ? 1 : 0;
-  counterSize += isVocal(word.charAt(3)) ? 1 : 0;
-  counterSize += isVocal(word.charAt(4)) ? 1 : 0;
+  counterSize += isVowel(word.charAt(0)) ? 1 : 0;
+  counterSize += isVowel(word.charAt(1)) ? 1 : 0;
+  counterSize += isVowel(word.charAt(2)) ? 1 : 0;
+  counterSize += isVowel(word.charAt(3)) ? 1 : 0;
+  counterSize += isVowel(word.charAt(4)) ? 1 : 0;
 
   console.log(counterSize);
 };
 
-checkVocalWord('raton');
+checkVowelsWord('raton');
 
 // Función que reciba una palabra de 5 letras y la imprima al reves, adios -> soidA
 
 const revertWord = word => {
   if (word.length !== 5) {
     console.log('La palabra debe contener 5 letras!');
+    return;
   }
 
   const reversed = word.charAt(4) + word.charAt(3) + word.charAt(2) + word.charAt(1) + word.charAt(0);
@@ -190,6 +192,7 @@ revertWord('Adiós');
 const sumDigits = number => {
   if (number < 100 || number > 999) {
     console.log('El número debe tener exactamente 3 cifras');
+    return;
   }
 
   const number1 = Math.floor(number / 100);
@@ -199,3 +202,17 @@ const sumDigits = number => {
   console.log(number1 + number2 + number3);
 };
 sumDigits(456);
+
+const sumDigitsNew = number => {
+  if (number < 100 || number > 999) {
+    console.log('El número debe tener exactamente 3 cifras');
+    return;
+  }
+
+  const numberString = String(number);
+  const numberOne = Number(numberString.charAt(0));
+  const numberTwo = Number(numberString.charAt(1));
+  const numberThree = Number(numberString.charAt(2));
+  console.log(numberOne + numberTwo + numberThree);
+};
+sumDigitsNew(456);
