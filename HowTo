@@ -1,9 +1,7 @@
 LiveServer
 
-
 Prettier:
-    Code-preferences-settings -> Prettier in search
-
+Code-preferences-settings -> Prettier in search
 
     - Prettier: Arrow Parens Change to avoid
     - Prettier: Jsx Single Quote  V
@@ -17,5 +15,6 @@ Prettier:
 
     - Editor: Format On Save    V
 
+    -wrap -> ON
 
 Error Lens

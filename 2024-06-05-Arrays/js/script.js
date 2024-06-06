@@ -35,48 +35,50 @@ console.log(printRandomNumber([1, 2, 3, 4, 5]));
 //   - "La suma de todos los números es:[suma]"
 //   - "La media de todos los números es:[media]"
 //   - "El mayor es [mayor] y el menor es [menor]"
-const printSumAverageHight = number => {
-  console.log(number[0] + number[1] + number[2]);
-  console.log((number[0] + number[1] + number[2]) / number.length);
-  console.log(Math.max(number[0], number[1], number[2]));
+const printSumAverageHight = numbers => {
+  console.log(numbers[0] + numbers[1] + numbers[2]);
+  console.log((numbers[0] + numbers[1] + numbers[2]) / numbers.length);
+  console.log(Math.max(numbers[0], numbers[1], numbers[2]));
+  console.log(Math.min(numbers[0], numbers[1], numbers[2]));
 };
 printSumAverageHight([4, 5, 6]);
 
 // - Crea una función que reciba un array con 5 números del 0 al 10 (a tu elección). Dentro de la función genera un número aleario entre 0 y 10. La función deberá decir si el array contiene ese número y en qué posición está o si no lo contiene.
 
-const randomNumberCheck = number => {
+const randomNumberCheck = numbers => {
   const randomValue = Math.ceil(Math.random() * 10);
 
-  if (number.includes(randomValue)) console.log(`El numero ${randomValue} está en el array`);
+  if (numbers.includes(randomValue))
+    console.log(`El numero ${randomValue} está en el la posicion ${numbers.indexOf(randomValue)}`);
   else console.log(`El numero ${randomValue} no está en el array`);
 };
 randomNumberCheck([3, 4, 6, 7, 8]);
 
 // - Crea una función que reciba un array vacío y lo devuelva con 3 números aleatorios entre 0 y 100.
-const pushArrayNumber = number => {
+const pushArrayNumber = emptyArray => {
   const firstRandomValue = Math.ceil(Math.random() * 100);
   const secondRandomValue = Math.ceil(Math.random() * 100);
   const thirdRandomValue = Math.ceil(Math.random() * 100);
 
-  number.push(firstRandomValue, secondRandomValue, thirdRandomValue);
+  emptyArray.push(firstRandomValue, secondRandomValue, thirdRandomValue);
 
-  console.log(number);
+  console.log(emptyArray);
 };
 
 pushArrayNumber([]);
 // - Crea una función que reciba un array de 5 números. Dentro de esa función crea dos arrays vacíos llamados even (pares) y odd (impares), después multiplica cada uno de los números del array recibido por un número aleatorio entre 1 y 10, si el resultado es par, guárdalo en el array de pares, si es impar, en el array de impares, al final, imprime los 3 arrays por consola.
 
-const checkArrayValue = number => {
-  console.log(number);
+const checkArrayValue = numbers => {
+  console.log(numbers);
   const evenArray = [];
   const oddArray = [];
 
   const randomValue = Math.ceil(Math.random() * 10);
-  const firstNumber = number[0] * randomValue;
-  const secondNumber = number[1] * randomValue;
-  const thirdNumber = number[2] * randomValue;
-  const fourthNumber = number[3] * randomValue;
-  const fifthNumber = number[4] * randomValue;
+  const firstNumber = numbers[0] * randomValue;
+  const secondNumber = numbers[1] * randomValue;
+  const thirdNumber = numbers[2] * randomValue;
+  const fourthNumber = numbers[3] * randomValue;
+  const fifthNumber = numbers[4] * randomValue;
 
   if (firstNumber % 2 === 0) evenArray.push(firstNumber);
   else oddArray.push(firstNumber);
@@ -95,13 +97,14 @@ const checkArrayValue = number => {
 
   console.log(evenArray);
   console.log(oddArray);
+  console.log(numbers);
 };
 
 checkArrayValue([1, 2, 3, 4, 5]);
 
 // - Crea una función llamada dniLetter que recibirá un número de DNI sin la letra. Dentro de esa función pon este array ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'] La letra del DNI se calcula a través del resto de dividir el número de DNI entre 23, ese número te dará la posición del array donde se encuentra la letra correspondiente a ese DNI. Imprime por consola el DNI con su letra correspondiente.
 
-const dniLetter = number => {
+const dniLetter = dni => {
   const getLetters = [
     'T',
     'R',
@@ -128,9 +131,9 @@ const dniLetter = number => {
     'E'
   ];
 
-  const numberToArrayPosition = number % 23;
+  const numberToArrayPosition = dni % 23;
 
-  console.log(getLetters[numberToArrayPosition]);
+  console.log(dni + getLetters[numberToArrayPosition]);
 };
 
 dniLetter(70253012);
@@ -161,3 +164,15 @@ const convertArrayToUpperCaseNew = word => {
   console.log(newWord);
 };
 convertArrayToUpperCaseNew(['hola', 'adios', 'gato']);
+
+const returnExample = (a, b) => {
+  const isGreater = a > b;
+  if (isGreater) {
+    return true;
+  } else {
+    return false;
+  }
+};
+returnExample(4, 9);
+
+const returnExampleNew = (a, b) => a > b;
