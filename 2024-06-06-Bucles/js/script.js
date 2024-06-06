@@ -168,16 +168,15 @@ const primeNumber = number => {
   }
 
   for (let i = 2; i < number; i++) {
-    if (number % i === 0 && number % 2 !== 0) {
-      //-------------------------------------------------------- ERROR. TODO LOS NUMEROS SE PUEDEN DIVIDIR ENTRE SI MISMOS
-      console.log(number + ' es un número primo.');
+    if (number % i === 0) {
+      console.log(number + ' no es un número primo.');
       return;
     }
   }
 
-  console.log(number + ' no es un número primo.');
+  console.log(number + ' es un número primo.');
 };
-primeNumber(25);
+primeNumber(19);
 
 // - Crea una función que reciba un array de 10 números, imprime por consola cada número, su cuadrado y su cubo en este formato:
 //   "Número: 2 - Cuadrado: 4 - Cubo: 8".
