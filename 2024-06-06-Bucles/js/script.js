@@ -40,6 +40,7 @@ for (const letter of word) {
   console.log(letter);
 }
 
+console.clear();
 // # Ejercicios
 
 // ## Bucles Determinados
@@ -53,14 +54,12 @@ const DecrNumber = number => {
 
 DecrNumber(10);
 // - Crea una función que reciba un array de 10 números e imprima por consola la suma de todos los valores del array.
-console.clear();
-
 const sumArray = numbers => {
-  for (const number of numbers) {
-    console.log(number);
-
-    //TODO -------
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
   }
+  console.log(`La suma de los valores del array ${numbers} es: ${sum}`);
 };
 sumArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
@@ -129,7 +128,6 @@ const ageBirthday = (year, age) => {
 ageBirthday(2024, 28);
 
 // - Crea una función que reciba dos números e imprima todos los números pares desde el primero hasta el segundo. Si recibe 2 y 12 imprimirá 2, 4, 6, 8, 10, 12.
-
 const printOddEvenNumber = (numberA, numberB) => {
   for (let i = numberA; i <= numberB; i++) {
     if (i % 2 === 0) {
@@ -141,14 +139,65 @@ const printOddEvenNumber = (numberA, numberB) => {
 printOddEvenNumber(2, 12);
 
 // - Crea una función que genere 2 arrays y los rellene con 5 números aleatorios cada uno, la función debe decir qué valores se han repetido en los dos arrays.
+const repetitionNumber = (numbersA, numbersB) => {
+  for (let i = 0; i < 5; i++) {
+    const randomValue = Math.ceil(Math.random() * 10);
+    numbersA.push(randomValue);
+  }
+  for (let i = 0; i < 5; i++) {
+    const randomValue = Math.ceil(Math.random() * 10);
+    numbersB.push(randomValue);
+  }
+  const repValues = [];
+  for (let i = 0; i < 5; i++) {
+    if (numbersB.includes(numbersA[i]) && !repValues.includes(numbersA[i])) {
+      repValues.push(numbersA[i]);
+    }
+  }
+
+  console.log(numbersA, numbersB);
+  console.log(repValues);
+};
+
+repetitionNumber([], []);
 
 // - Crea una función que reciba un número y te diga si es primo o no. Un número primo es aquel que sólo puede dividirse por si mismo
+const primeNumber = number => {
+  if (number < 2) {
+    console.log('Un numero menor que 2 no es numero primo');
+  }
+
+  for (let i = 2; i < number; i++) {
+    if (number % i === 0 && number % 2 !== 0) {
+      //-------------------------------------------------------- ERROR. TODO LOS NUMEROS SE PUEDEN DIVIDIR ENTRE SI MISMOS
+      console.log(number + ' es un número primo.');
+      return;
+    }
+  }
+
+  console.log(number + ' no es un número primo.');
+};
+primeNumber(25);
 
 // - Crea una función que reciba un array de 10 números, imprime por consola cada número, su cuadrado y su cubo en este formato:
 //   "Número: 2 - Cuadrado: 4 - Cubo: 8".
 //   Nota: Dentro del objeto Math existe el método pow. Math.pow(número, exponente)
+const powValue = numbers => {
+  for (const number of numbers) {
+    console.log(`Numero: ${number} - Cuadrado: ${Math.pow(number, 2)} - Cubo: ${Math.pow(number, 3)}`);
+  }
+};
+
+powValue([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
 // - Crea una función que reciba una palabra e imprima por consola esa palabra pero con las vocales en mayúscula.
+const upperCaseWord = word => {
+  for (const letter of word) {
+    console.log(letter.toUpperCase());
+  }
+};
+
+upperCaseWord('Tatiana');
 
 // - Crea una función que reciba una frase e imprima el número de veces que se repite cada vocal, por ejemplo para la frase "Enrique ordeña cabras", el resultado por consola debe ser:
 //   a: 3,
@@ -156,11 +205,104 @@ printOddEvenNumber(2, 12);
 //   i: 1,
 //   o: 1,
 //   u: 1
+const checkVowelRepetition = word => {
+  frase = word.toLowerCase();
+  let a = 0;
+  let e = 0;
+  let i = 0;
+  let o = 0;
+  let u = 0;
+
+  for (let i = 0; i < word.length; i++) {
+    let caracter = word[i];
+
+    if (caracter === 'a') a++;
+    else if (caracter === 'e') e++;
+    else if (caracter === 'i') i++;
+    else if (caracter === 'o') o++;
+    else if (caracter === 'u') u++;
+  }
+
+  console.log('a: ' + a);
+  console.log('e: ' + e);
+  console.log('i: ' + i);
+  console.log('o: ' + o);
+  console.log('u: ' + u);
+};
+
+checkVowelRepetition('Enrique ordeña cabras');
 
 // - Crea una función que reciba dos palabras e intercale las letras de cada una para formar una nueva palabra. Si la función recibe (hola, adios) el resultado será "haodliao", pero si recibe (adios, hola) el resultado será "ahdoiloa"
 
+//NO FUNCIONA
+const intercalateWord = (wordA, wordB) => {
+  let newWord = '';
+
+  const lenghtWordMax = Math.max(wordA.length, wordB.length);
+
+  for (let i = 0; i < lenghtWordMax; i++) {
+    if (i < wordA.lenght) {
+      newWord += wordA[i];
+    }
+    if (i < wordB.lenght) {
+      newWord += wordB[i];
+    }
+  }
+
+  console.log(wordA);
+  console.log(wordB);
+  console.log(lenghtWordMax);
+  console.log(newWord);
+};
+
+intercalateWord('hola', 'adios');
+
 // - Crea una función que reciba una palabra e imprima la misma palabra en orden inverso conservando las mayúsculas y las minúsculas. Si recibe "Mariposas" deberá imprimir "sasopiraM"
 
+const reverseWord = word => {
+  let newWord = '';
+
+  for (let i = word.length - 1; i >= 0; i--) {
+    newWord += word[i];
+  }
+
+  console.log(newWord);
+};
+
+reverseWord('Mariposas');
 // - Crea una función que reciba un array de 10 números. Dentro de esa función crea dos arrays vacíos llamados even (pares) y odd (impares), después multiplica cada uno de los números del array recibido por un número aleatorio entre 1 y 10, si el resultado es par, guárdalo en el array de pares, si es impar, en el array de impares, al final, imprime los 3 arrays por consola.
+const checkArrayValue = numbers => {
+  console.log(numbers);
+  const evenArray = [];
+  const oddArray = [];
+  let newNumber = 0;
+  const randomValue = Math.ceil(Math.random() * 10);
+
+  for (i = 0; i <= numbers.length; i++) {
+    newNumber = i * randomValue;
+
+    if (newNumber % 2 === 0) evenArray.push(newNumber);
+    else oddArray.push(newNumber);
+  }
+
+  console.log(evenArray);
+  console.log(oddArray);
+  console.log(numbers);
+};
+
+checkArrayValue([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
 // - Crea una función que reciba un array con 5 palabras, debes imprimir por consola un array que contenga la inicial y la última letra de cada palabra en mayúsculas, es decir, si nuestra función recibiera un array con ['hola', 'adios', 'gato', 'perro', 'casa'] deberá imprimir por consola ['H', 'A', 'A', 'S', 'G', 'O', 'P','O', 'C', 'A']
+
+const convertArrayToUpperCase = words => {
+  const upperCaseChars = [];
+
+  for (let i = 0; i < words.length; i++) {
+    upperCaseChars.push(words[i][0].toUpperCase());
+    upperCaseChars.push(words[i][words[i].length - 1].toUpperCase());
+  }
+
+  console.log(upperCaseChars);
+};
+
+convertArrayToUpperCase(['hola', 'adios', 'gato', 'perro', 'casa']);
