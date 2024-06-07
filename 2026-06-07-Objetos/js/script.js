@@ -132,6 +132,9 @@ const wordArray = word => {
   //console.log(word);
   const isVowel = 'aeiouáéíóú';
   const isSpecialCharacter = ' ,.';
+  const splitWord = word.split(' ');
+  const isAlphabet = 'bcdfghjklmnñpqrstvwxyz';
+  secretCode = dataNew.sixthFloor.secretCode;
 
   //for (let i = 0; i < word.length; i++) {
   for (const caracter of word) {
@@ -140,10 +143,56 @@ const wordArray = word => {
     } else if (!isVowel.includes(caracter) && !isSpecialCharacter.includes(caracter)) {
       dataNew.secondFloor.consonants.push(caracter);
     }
+    dataNew.fourthFloor.asciiCode.push(caracter.charCodeAt());
+  }
+
+  for (let i = 0; i < splitWord.length; i++) {
+    dataNew.fifthFloor.wordsInUppercase.push(splitWord[i].toUpperCase());
+    dataNew.fifthFloor.wordsInLowercase.push(splitWord[i].toLowerCase());
+  }
+
+  word = word.replace(/[áàäâ]/gi, 'a');
+  word = word.replace(/[éèëê]/gi, 'e');
+  word = word.replace(/[íìïî]/gi, 'i');
+  word = word.replace(/[óòöû]/gi, 'o');
+  word = word.replace(/[úùüû]/gi, 'u');
+
+  const cryptVowel = {
+    a: '1',
+    e: '2',
+    i: '3',
+    o: '4',
+    u: '5'
+  };
+
+  const previuosLetter = letter => {
+    let index = isAlphabet.indexOf(letter);
+    if (index === 'b') return isAlphabet[isAlphabet.length - 1];
+    else return isAlphabet[(index - 1 + isAlphabet.length) % isAlphabet.length];
+  };
+
+  const randomSpaceLetter = letter => {
+    return isAlphabet[Math.floor(Math.random() * isAlphabet.length)];
+  };
+
+  for (let char of word) {
+    if (cryptVowel[char]) {
+      secretCode += cryptVowel[char];
+    } else if (isAlphabet.includes(char)) {
+      secretCode += previuosLetter(char);
+    } else if (char === ' ') {
+      secretCode += randomSpaceLetter();
+    } else {
+      secretCode += char;
+    }
   }
 
   console.log(dataNew.firstFloor.vowels);
   console.log(dataNew.secondFloor.consonants);
+  console.log(dataNew.fourthFloor.asciiCode);
+  console.log(dataNew.fifthFloor.wordsInUppercase);
+  console.log(dataNew.fifthFloor.wordsInLowercase);
+  console.log(secretCode);
 };
 
 wordArray('Si no estudias acabarás como Victor');
