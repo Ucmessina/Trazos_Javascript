@@ -47,7 +47,7 @@ console.clear();
 
 // - Crea una función que reciba un número, la función debe imprimir una cuenta atrás desde ese número hasta 0.
 const DecrNumber = number => {
-  for (let i = number; i > 0; i--) {
+  for (let i = number; i >= 0; i--) {
     console.log(i);
   }
 };
@@ -56,8 +56,12 @@ DecrNumber(10);
 // - Crea una función que reciba un array de 10 números e imprima por consola la suma de todos los valores del array.
 const sumArray = numbers => {
   let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
+  // for (let i = 0; i < numbers.length; i++) {
+  //   sum += numbers[i];
+  // }
+
+  for (const number of numbers) {
+    sum += number;
   }
   console.log(`La suma de los valores del array ${numbers} es: ${sum}`);
 };
@@ -76,13 +80,13 @@ sumArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 //   4 x 8 = 32
 //   4 x 9 = 36
 //   4 x 10 = 40
-const tableOfFour = number => {
+const multiplyTable = number => {
   for (let i = 0; i <= 10; i++) {
-    console.log(i * number);
+    console.log(`${number} x ${i} = ${i * number}`);
   }
 };
 
-tableOfFour(4);
+multiplyTable(4);
 
 // - Crea la función inversa para que la tabla de multiplicar salga en orden inverso. Para el 4 el resultado debe ser:
 
@@ -98,13 +102,13 @@ tableOfFour(4);
 //   4 x 1 = 4
 //   4 x 0 = 0
 
-const tableOfFourReverse = number => {
+const multiplyTableReverse = number => {
   for (let i = 10; i >= 0; i--) {
-    console.log(i * number);
+    console.log(`${number} x ${i} = ${i * number}`);
   }
 };
 
-tableOfFourReverse(4);
+multiplyTableReverse(4);
 
 // - Crea una función que reciba el año actual y tu edad, la función debe imprimir:
 
@@ -116,12 +120,11 @@ tableOfFourReverse(4);
 
 const ageBirthday = (year, age) => {
   const firstAge = year - age;
-  let x = 0;
   console.log(`Nasciste en el año ${firstAge}`);
 
   for (let i = firstAge + 1; i <= year; i++) {
-    x++;
-    console.log(`En el año ${i} cumpliste ${x} año`);
+    if (i === firstAge + 1) console.log(`En el año ${i} cumpliste ${i - firstAge} año`);
+    else console.log(`En el año ${i} cumpliste ${i - firstAge} años`);
   }
 };
 
@@ -129,25 +132,31 @@ ageBirthday(2024, 28);
 
 // - Crea una función que reciba dos números e imprima todos los números pares desde el primero hasta el segundo. Si recibe 2 y 12 imprimirá 2, 4, 6, 8, 10, 12.
 const printOddEvenNumber = (numberA, numberB) => {
-  for (let i = numberA; i <= numberB; i++) {
+  if (numberA === numberB) {
+    console.log(`${numberA} es igual a ${numberB}`);
+    return;
+  }
+
+  const max = Math.max(numberA, numberB);
+  const min = Math.min(numberA, numberB);
+  for (let i = min; i <= max; i++) {
     if (i % 2 === 0) {
       console.log(i);
     }
   }
 };
 
-printOddEvenNumber(2, 12);
+printOddEvenNumber(19, 19);
 
 // - Crea una función que genere 2 arrays y los rellene con 5 números aleatorios cada uno, la función debe decir qué valores se han repetido en los dos arrays.
 const repetitionNumber = (numbersA, numbersB) => {
   for (let i = 0; i < 5; i++) {
-    const randomValue = Math.ceil(Math.random() * 10);
-    numbersA.push(randomValue);
+    const randomValueA = Math.ceil(Math.random() * 10);
+    numbersA.push(randomValueA);
+    const randomValueB = Math.ceil(Math.random() * 10);
+    numbersB.push(randomValueB);
   }
-  for (let i = 0; i < 5; i++) {
-    const randomValue = Math.ceil(Math.random() * 10);
-    numbersB.push(randomValue);
-  }
+
   const repValues = [];
   for (let i = 0; i < 5; i++) {
     if (numbersB.includes(numbersA[i]) && !repValues.includes(numbersA[i])) {
