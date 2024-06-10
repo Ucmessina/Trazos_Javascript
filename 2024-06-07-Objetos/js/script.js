@@ -78,15 +78,16 @@ const data = {
 const dataObject = number => {
   //console.log(number.length);
 
-  for (let i = 0; i < number.length; i++) {
+  //for (let i = 0; i < number.length; i++)
+  for (number of data.numbers) {
     //console.log(number[i] + 2);
-    data.firstFloor.secondFloor.numbersPlus2.push(number[i] + 2);
-    data.firstFloor.thirdFloor.numbersDouble.push(number[i] * 2);
-    data.fourthFloor.numbersDividedBy2.push(number[i] / 2);
-    if (number[i] % 2 === 0) {
-      data.fifthFloor.onlyEven.push(number[i]);
+    data.firstFloor.secondFloor.numbersPlus2.push(number + 2);
+    data.firstFloor.thirdFloor.numbersDouble.push(number * 2);
+    data.fourthFloor.numbersDividedBy2.push(number / 2);
+    if (number % 2 === 0) {
+      data.fifthFloor.onlyEven.push(number);
     } else {
-      data.fifthFloor.onlyOdd.push(number[i]);
+      data.fifthFloor.onlyOdd.push(number);
     }
   }
   console.log(data.firstFloor.secondFloor.numbersPlus2);
@@ -127,17 +128,17 @@ const dataNew = {
   }
 };
 
-const wordArray = word => {
-  word = word.toLowerCase();
+const wordArray = phrase => {
   //console.log(word);
   const isVowel = 'aeiouáéíóú';
   const isSpecialCharacter = ' ,.';
-  const splitWord = word.split(' ');
-  const isAlphabet = 'bcdfghjklmnñpqrstvwxyz';
+  const splitWord = phrase.split(' ');
+  const isAlphabet = 'abcdefghijklmnñopqrstuvwxyz';
+  const isConsonant = 'bcdfghjklmnñpqrstvwxyz';
   secretCode = dataNew.sixthFloor.secretCode;
 
   //for (let i = 0; i < word.length; i++) {
-  for (const caracter of word) {
+  for (const caracter of phrase) {
     if (isVowel.includes(caracter)) {
       dataNew.firstFloor.vowels.push(caracter);
     } else if (!isVowel.includes(caracter) && !isSpecialCharacter.includes(caracter)) {
@@ -151,34 +152,35 @@ const wordArray = word => {
     dataNew.fifthFloor.wordsInLowercase.push(splitWord[i].toLowerCase());
   }
 
-  word = word.replace(/[áàäâ]/gi, 'a');
-  word = word.replace(/[éèëê]/gi, 'e');
-  word = word.replace(/[íìïî]/gi, 'i');
-  word = word.replace(/[óòöû]/gi, 'o');
-  word = word.replace(/[úùüû]/gi, 'u');
+  phrase = phrase.toLowerCase();
+  phrase = phrase.replace(/[áàäâa]/gi, 1);
+  phrase = phrase.replace(/[éèëêe]/gi, 2);
+  phrase = phrase.replace(/[íìïîi]/gi, 3);
+  phrase = phrase.replace(/[óòöûo]/gi, 4);
+  phrase = phrase.replace(/[úùüûu]/gi, 5);
 
-  const cryptVowel = {
-    a: '1',
-    e: '2',
-    i: '3',
-    o: '4',
-    u: '5'
-  };
+  // const cryptVowel = {
+  //   a: '1',
+  //   e: '2',
+  //   i: '3',
+  //   o: '4',
+  //   u: '5'
+  // };
 
   const previuosLetter = letter => {
-    let index = isAlphabet.indexOf(letter);
-    if (index === 'b') return isAlphabet[isAlphabet.length - 1];
-    else return isAlphabet[(index - 1 + isAlphabet.length) % isAlphabet.length];
+    let index = isConsonant.indexOf(letter);
+    if (index === 'b') return isConsonant[isConsonant.length - 1];
+    else return isConsonant[(index - 1 + isConsonant.length) % isConsonant.length];
   };
 
   const randomSpaceLetter = letter => {
     return isAlphabet[Math.floor(Math.random() * isAlphabet.length)];
   };
 
-  for (let char of word) {
-    if (cryptVowel[char]) {
+  for (let char of phrase) {
+    /*if (cryptVowel[char]) {
       secretCode += cryptVowel[char];
-    } else if (isAlphabet.includes(char)) {
+    } else */ if (isAlphabet.includes(char)) {
       secretCode += previuosLetter(char);
     } else if (char === ' ') {
       secretCode += randomSpaceLetter();

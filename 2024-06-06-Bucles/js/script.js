@@ -158,9 +158,15 @@ const repetitionNumber = (numbersA, numbersB) => {
   }
 
   const repValues = [];
-  for (let i = 0; i < 5; i++) {
-    if (numbersB.includes(numbersA[i]) && !repValues.includes(numbersA[i])) {
-      repValues.push(numbersA[i]);
+  // for (let i = 0; i < 5; i++) {
+  //   if (numbersB.includes(numbersA[i]) && !repValues.includes(numbersA[i])) {
+  //     repValues.push(numbersA[i]);
+  //   }
+  // }
+
+  for (number of numbersB) {
+    if (numbersA.includes(number) && !repValues.includes(number)) {
+      repValues.push(number);
     }
   }
 
@@ -172,20 +178,20 @@ repetitionNumber([], []);
 
 // - Crea una función que reciba un número y te diga si es primo o no. Un número primo es aquel que sólo puede dividirse por si mismo
 const primeNumber = number => {
-  if (number < 2) {
-    console.log('Un numero menor que 2 no es numero primo');
+  if (number < 2 || (number % 2 === 0 && number != 2)) {
+    console.log(`${number} no es un número primo.`);
   }
 
   for (let i = 2; i < number; i++) {
     if (number % i === 0) {
-      console.log(number + ' no es un número primo.');
+      console.log(`${number} no es un número primo.`);
       return;
     }
   }
 
   console.log(number + ' es un número primo.');
 };
-primeNumber(19);
+primeNumber(2);
 
 // - Crea una función que reciba un array de 10 números, imprime por consola cada número, su cuadrado y su cubo en este formato:
 //   "Número: 2 - Cuadrado: 4 - Cubo: 8".
@@ -200,9 +206,17 @@ powValue([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
 // - Crea una función que reciba una palabra e imprima por consola esa palabra pero con las vocales en mayúscula.
 const upperCaseWord = word => {
-  for (const letter of word) {
-    console.log(letter.toUpperCase());
+  let newWord = '';
+  const vowel = 'aeiou';
+
+  for (letter of word) {
+    if (vowel.includes(letter)) {
+      newWord += letter.toUpperCase();
+    } else {
+      newWord += letter.toLowerCase();
+    }
   }
+  console.log(newWord);
 };
 
 upperCaseWord('Tatiana');
@@ -213,16 +227,15 @@ upperCaseWord('Tatiana');
 //   i: 1,
 //   o: 1,
 //   u: 1
-const checkVowelRepetition = word => {
-  frase = word.toLowerCase();
+const checkVowelRepetition = phrase => {
   let a = 0;
   let e = 0;
   let i = 0;
   let o = 0;
   let u = 0;
 
-  for (let i = 0; i < word.length; i++) {
-    let caracter = word[i];
+  for (letter of phrase.toLowerCase()) {
+    let caracter = letter;
 
     if (caracter === 'a') a++;
     else if (caracter === 'e') e++;
@@ -241,25 +254,15 @@ const checkVowelRepetition = word => {
 checkVowelRepetition('Enrique ordeña cabras');
 
 // - Crea una función que reciba dos palabras e intercale las letras de cada una para formar una nueva palabra. Si la función recibe (hola, adios) el resultado será "haodliao", pero si recibe (adios, hola) el resultado será "ahdoiloa"
-
-//NO FUNCIONA
 const intercalateWord = (wordA, wordB) => {
   let newWord = '';
 
-  const lenghtWordMax = Math.max(wordA.length, wordB.length);
+  const lenghtWordMin = Math.min(wordA.length, wordB.length);
 
-  for (let i = 0; i < lenghtWordMax; i++) {
-    if (i < wordA.lenght) {
-      newWord += wordA[i];
-    }
-    if (i < wordB.lenght) {
-      newWord += wordB[i];
-    }
+  for (let i = 0; i < lenghtWordMin; i++) {
+    newWord += wordA[i] + wordB[i];
   }
 
-  console.log(wordA);
-  console.log(wordB);
-  console.log(lenghtWordMax);
   console.log(newWord);
 };
 
@@ -275,6 +278,9 @@ const reverseWord = word => {
   }
 
   console.log(newWord);
+
+  //en una linea
+  console.log(word.split('').reverse().join(''));
 };
 
 reverseWord('Mariposas');
@@ -283,11 +289,11 @@ const checkArrayValue = numbers => {
   console.log(numbers);
   const evenArray = [];
   const oddArray = [];
-  let newNumber = 0;
   const randomValue = Math.ceil(Math.random() * 10);
 
-  for (i = 0; i <= numbers.length; i++) {
-    newNumber = i * randomValue;
+  //for (i = 0; i <= numbers.length; i++)
+  for (number of numbers) {
+    const newNumber = number * randomValue;
 
     if (newNumber % 2 === 0) evenArray.push(newNumber);
     else oddArray.push(newNumber);
