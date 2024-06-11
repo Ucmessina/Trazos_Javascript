@@ -342,7 +342,6 @@ const sumDigits = numbers => {
     const digits = String(number);
 
     const sum = digits.split('').reduce((acc, digit) => acc + Number(digit), 0);
-
     return sum;
   });
 };
@@ -387,11 +386,19 @@ console.log(sumDigits([21, 34, 87, 10, 28]));
 //   }
 // ];
 
-const orderUser = user => {
-  const total = user.sort((a, b) => a - b);
-  console.log(a.user.age, b.user.age);
-  //console.log(total);
+const orderUser = (user, age) => {
+  const filterAge = user.sort((a, b) => {
+    return a.age - b.age;
+  });
+
+  console.log(filterAge);
 };
+// NO FUNCIONA
+/*function deleteUserById(users, userId) {
+  return users.filter(user => user.id !== userId);
+}
+
+console.log(deleteUserById('user001')); */
 
 orderUser([
   {
