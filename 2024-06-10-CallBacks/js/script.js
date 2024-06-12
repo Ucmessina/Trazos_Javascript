@@ -229,12 +229,13 @@ vowelUpperCase('consola');
 
 // - Crea una función que reciba un array de 10 números. Dentro de esa función crea dos arrays llamados even (pares) y odd (impares), después multiplica cada uno de los números del array recibido por un número aleatorio entre 1 y 10, si el resultado es par, guárdalo en el array de pares, si es impar, en el array de impares, al final, imprime los 3 arrays por consola.
 
-const evenOddArray = numbers => {
+/*const evenOddArray = numbers => {
   const odd = [];
   const even = [];
 
   const randomValue = Math.ceil(Math.random() * 10);
 
+  // MAP O FILTER YA CREAN EL ARRAY
   const total = numbers.map(numbers => {
     if ((numbers * randomValue) % 2 === 0) {
       return even.push(numbers * randomValue);
@@ -247,20 +248,33 @@ const evenOddArray = numbers => {
   console.log(odd);
 };
 
+evenOddArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); */
+
+const evenOddArray = numbers => {
+  const randomValue = Math.ceil(Math.random() * 10);
+
+  const arrayResult = numbers.map(number => {
+    return number * randomValue;
+  });
+
+  const evens = arrayResult.filter(number => number % 2 === 0);
+  const odds = arrayResult.filter(number => number % 2 !== 0);
+
+  console.log(numbers, evens, odds);
+};
+
 evenOddArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
 // - Crea una función que reciba un array con 5 palabras, debes imprimir por consola un array que contenga la inicial y la última letra de cada palabra en mayúsculas, es decir, si nuestra función recibiera un array con ['hola', 'adios', 'gato', 'perro', 'casa'] deberá imprimir por consola ['H', 'A', 'A', 'S', 'G', 'O', 'P','O', 'C', 'A']. Si te quedas atascado puedes investigar la función flatMap() y flat()
 
 const firstLastUpperCase = word => {
-  console.log(word);
-
-  const total = word.flatMap(letter => {
+  const firstAndLastLetter = word.flatMap(letter => {
     const firstLetter = letter.charAt(0).toUpperCase();
     const lastLetter = letter.charAt(letter.length - 1).toUpperCase();
 
     return [firstLetter, lastLetter];
   });
-  console.log(total);
+  console.log(firstAndLastLetter);
 };
 
 firstLastUpperCase(['hola', 'adios', 'gato', 'perro', 'casa']);
@@ -268,9 +282,7 @@ firstLastUpperCase(['hola', 'adios', 'gato', 'perro', 'casa']);
 // - Crea una función que reciba un array de 10 números y te diga si alguno es mayor de 5.
 
 const numberMayorOfFive = numbers => {
-  const total = numbers.some(number => {
-    return number > 5;
-  });
+  const total = numbers.some(number => number > 5);
   console.log(total);
 };
 
@@ -293,23 +305,20 @@ const dividersNumber = (numbers, diviser) => {
 
 dividersNumber([2, 3, 4, 5, 6, 7], 2);
 // - Crea una función que reciba este array y te devuelva sólo los usuarios cuya edad sea menor de 30
-//   const array = [
-//   { name: 'John', age: 25 },
-//   { name: 'Jane', age: 30 },
-//   { name: 'Bob', age: 20 }
-//   ];
-
-const ageLessThirty = year => {
-  const total = year.filter(user => {
-    if (user.age < 30) console.log(`${user.name} tiene menos de 30 años.`);
-  });
-};
-
-ageLessThirty([
+const users = [
   { name: 'John', age: 25 },
   { name: 'Jane', age: 30 },
   { name: 'Bob', age: 20 }
-]);
+];
+
+const ageLessThirty = year => {
+  const userUnderThirty = year.filter(user => {
+    return user.age < 30;
+  });
+  console.log(userUnderThirty);
+};
+
+ageLessThirty(users);
 // - Crea una función que reciba un array relleno con números y te diga si todos son pares o no.
 
 const allEvenNumbers = numbers => {
@@ -323,84 +332,40 @@ allEvenNumbers([2, 4, 6, 8, 10, 13, 15, 16, 4, 6, 2]);
 
 // - Crea una función que reciba un array de 5 palabras y las ordene en base a su longitud, de menor a mayor.
 const sortByLength = words => {
-  return words.sort((a, b) => a.length - b.length);
+  const sortResult = words.sort((a, b) => a.length - b.length);
+  console.log(sortResult);
 };
 
-console.log(sortByLength(['perro', 'gato', 'ratón', 'elefante', 'tigre']));
+sortByLength(['perro', 'gato', 'ratón', 'elefante', 'tigre']);
 // - Crea una función que reciba una palabra e imprima la misma palabra en orden inverso conservando las mayúsculas y las minúsculas. Si recibe "Mariposas" deberá imprimir "sasopiraM". No se puede usar reverse() 😊 (investiga la función reduceRight)
 
 const reverseWord = word => {
-  return word.split('').reduce((reversed, char) => char + reversed, '');
+  const reversResult = word.split('').reduce((reversed, char) => char + reversed);
+  console.log(reversResult);
 };
-console.log(reverseWord('Mariposas'));
+reverseWord('Mariposas');
 
 // ## Retos!!
 
 // - Crea una función que reciba un array de 5 números de 2 dígitos. La función debe ser capaz de sumar los digitos de cada número, es decir si yo le envío [21, 34, 87, 10, 28] la función tendrá que ser capaz de devolverme un array con [3, 7, 15, 1, 10]
 const sumDigits = numbers => {
-  return numbers.map(number => {
+  const sumValues = numbers.map(number => {
     const digits = String(number);
 
-    const sum = digits.split('').reduce((acc, digit) => acc + Number(digit), 0);
-    return sum;
+    const sumDigits = digits.split('').reduce((acc, digit) => acc + Number(digit), 0);
+    return sumDigits;
   });
+  console.log(sumValues);
 };
 
-console.log(sumDigits([21, 34, 87, 10, 28]));
+sumDigits([21, 34, 87, 10, 28]);
 // - Utilizando el array que te dejo a continuación resuelve estos dos retos.
 
 //   - Crea una función que reciba un criterio de ordenación y ordene el array en base a ese criterio. Puede ser el nombre, el apellido o la edad.
 
 //   - Crea una función que reciba un id de usuario y borre ese usuario del array.
 
-// const users = [
-//   {
-//     id: 'user001',
-//     name: 'Juan',
-//     surname: 'Pérez',
-//     age: 30
-//   },
-//   {
-//     id: 'user002',
-//     name: 'María',
-//     surname: 'González',
-//     age: 25
-//   },
-//   {
-//     id: 'user003',
-//     name: 'Pedro',
-//     surname: 'Sánchez',
-//     age: 35
-//   },
-//   {
-//     id: 'user004',
-//     name: 'Ana',
-//     surname: 'Martínez',
-//     age: 28
-//   },
-//   {
-//     id: 'user005',
-//     name: 'Luis',
-//     surname: 'López',
-//     age: 40
-//   }
-// ];
-
-const orderUser = (user, age) => {
-  const filterAge = user.sort((a, b) => {
-    return a.age - b.age;
-  });
-
-  console.log(filterAge);
-};
-// NO FUNCIONA
-/*function deleteUserById(users, userId) {
-  return users.filter(user => user.id !== userId);
-}
-
-console.log(deleteUserById('user001')); */
-
-orderUser([
+const usersArray = [
   {
     id: 'user001',
     name: 'Juan',
@@ -431,4 +396,19 @@ orderUser([
     surname: 'López',
     age: 40
   }
-]);
+];
+
+const orderUserByAge = condition => {
+  if (condition === 'age') {
+    usersArray.sort((a, b) => a.age - b.age);
+  } else if (condition === 'name') {
+    usersArray.sort((a, b) => a.name.localeCompare(b.name));
+  } else if (condition === 'surname') {
+    usersArray.sort((a, b) => a.surname.localeCompare(b.surname));
+  }
+  console.log(usersArray);
+};
+
+orderUserByAge('age');
+orderUserByAge('name');
+orderUserByAge('surname');
