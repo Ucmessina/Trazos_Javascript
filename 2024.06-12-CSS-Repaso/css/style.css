@@ -1,0 +1,111 @@
+/*
+CSS = Hoja de estilo en cascada. si aplicamos en estilo al mismo selector lo de abajo pesa mas de lo de arriba.
+
+Css --> Carpeta Css -> File siempre style.css
+HTML -> Siempre index.html -> Otros html en una carpeta HTML
+
+BorderRadius Genera elipses no circulos -> Orden siempre en el sentido del reloj
+El 50% genera un ciruclo -> porque divide el cuadrado entre 2 -> el maximo valor es 50%
+
+Menu -> la semantica debe ser nav -> ul -> li -> a    ----> Puede haber más de 1 nav
+
+H1 solo puede haber 1 --> tener más que uno es un fallo muy GORDO
+los h NUNCA se elijen en base al tañano --> NUNCA puedes tener un h3 si no tienes un h1 y h2. van por orden de gerarquía  --> HTML se encarga de estructuras no de estetica -> no tienes que utilizar un h solo porque es más pequeño
+
+Etiqueta de bloque siempre ocupa el ancho disponible
+Etiqueta de linea  siempre ocupa lo que ocupa su contenido
+
+p --> Solo para parrafos
+
+span --> el contenido suelto como nombre, apellido, email van siempre en un span --> es un contenedor de linea, no significa nada para el ordenador, solo es un contenido
+
+Article -> No es lo mismo que un section . el seciton envuelve el contenido relacionados --> los article representan contanido endependiente --> como saberlo? si puedes leerlo sin leerte nada mas y entenderlo, deberia ser un article porque no está relacionado con nada más y entiendes perfectamente el mensaje. Article contenido endependiente -  section contenido relacionado
+
+
+position --> espacio reservado -> espacio que el navegador reserva para ello. con position podemos modificar este espacio reservado -> normalmente se suele trabajar en px pero en algunos casos trabajar con % te ahorra trabajo
+
+    relative: mantienen su espacio reservado y se mueve desde el punto que le corresponde, desde donde està por defecto
+    absolute: los elementos pierden su espacio reservado y sus medidas. el contenido solo va a medir lo que mide su contenido. pierde su espacio reservado y se mueve respecto a su contenedor posicionado más cercano. si su padre tiene position se mueve respecto a su padre. con su abuelo igual. si no encuentran un contenedor con position se mueven respecto al body
+
+
+    background img --> propriedad background-size: cover
+
+
+    ::after y -::before son lo mismo (son pseudoelementos que te permiten creare 2 elementos extra por cada elemento que tienes) solo que se colocan antes y despues del elemnto. solo que dandole position absolute se van a colocar donde queremos nosotros
+    content:'' obligatoria sino no lo dibuja
+    se puede despues utilizar como cualquier etiqueta html
+
+
+Box-shadow: offSetX offSetY blur spread color --> Siempre mantienen el tamaño del elemento y se ponen siempre por debajo
+    inset -> la sombre se dibuja por dentro.
+    
+
+
+
+
+
+
+
+
+
+
+--- Para la queja
+* Objetivos a lograr del ppw
+* Criterios de relacion y orden
+* Css --> Carpeta Css -> File siempre style.css / index  --> Siempre utilizado estilos.css y home.html ERROR para errorer en * servidores -> Los servidores solo son capaces de leer un archivo de inicio index.html, si es otro NO vale
+* Error del * con estilos --> NUNCA! SOLO USAR EL BORDER BOX y explicacion del por qué!
+* Metodologia EMMET --> NUNCA EXPLICADO - NI UTILIZADO --> Para facilitar mucho el trabajo
+* Especificidad de etiquetas mal explicado (no sabemos calcularlo)
+* https://jonassebastianohlsson.com/specificity-graph/  --> Pagina web trabajo final muy mal hecho como especificidad --> Curvas especificidad MUY alta
+* Border radius admite 8 valores porque son elipses y no 4 valores como nos habian dicho y generaba circulos
+* Nunca hemos hecho un menú con la forma semantica correcta, siempre un nav con a -> puede haber mas nav
+* Main -> obligatorio en la pagina -> Nunca usado en ningun trabajo
+* H3 hemos siempre utilizado sin tener una gerarquía antecedente
+* SPAN nunca utilizado correctamente. ejemplo un correo siempre lo hemos puesto en un p y no es correcto!
+* Hay que utilizar el position absolute como ultimo remedio si no queda otra. Siempre lo hemos utilizado para posicionar texto arriba de img y es una mala practica
+* ::after ::before  --> Nunca lo hemos visto y es SUPER importante pare crear efectos visuales
+* Box shadow - gradiente nunca explicado -> Simplemente generarlo de una pagina web, copiar y pegar
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+
+*/
+ /*MALA PRACTICA PORQUE LE QUITAS ESTILOS PARA PONERLO DESPUES*/
+* {
+    box-sizing: border-box;
+}
+
+.container > *{
+    width: 200px;
+    height: 200px;
+    padding: 25px;
+    border: 10px solid purple;
+    background-color: red;
+    border-radius: 20px 30px 40px 50px / 50px 40px 30px 20px;
+
+}
+
+.box-small{
+    width: 100px;
+    height: 100px;
+
+}
+
+
+
+
+
+/* BOX MODEL --> base del css. cuando tenemos un elemento y le aplicamos medidas estas medidas se aplican a la caja*/
