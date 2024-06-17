@@ -1,0 +1,94 @@
+/*
+
+
+Tema de medidas
+Si algo tiene me medir 100px siempre sera en px
+si tiene que ajustarse al dispsitivo nunca en px
+
+-Las mediaquery se aplican a muchos dispositivos: media screen para que la media query se aplica en dispositivos que tengan pantalla
+
+@media (hover:hover){
+    ...:hover{
+        .....
+    }
+}
+
+en movil de esta forma con el click no entra el hover ya que en movil no hay hover. Desactiva el hover en dispositivos que no tengan cursor
+
+Em  ->  
+Rem -> 
+Px  -> 
+La diferencia en px y rem son problema de accesibilidad y compatibilidad cuando cambiamo de dispositivo. -> Tamaño de fuente del browser que puede cambiar -> Dando tamaño en px no cambia nunca, siempre hay que utilizar rem y em para padding, margin, border radius ecc ecc -> Px solo para las cosas que nunca cambian de tamaño, ej un logo.
+
+em y rem valen lo mismo siempre que no haya un font size declarado. Rem siempre coje de la raiz, em si tengo un contenedor con un font size entonces 1 em serà la medida del cont size declarado antes, retrocediendo de hijo, padre, abuelo, hasta llegar a la raiz
+
+BEM -> Bloque - elemento - modificador
+bloque -> cualqier pieza de la web reutilizable -> Que se pueda utilizar en otro sitio sin problema y que no necesita algo mas para funcionar. funziona en cualquier web sin problemas
+elemento -> cualquier pieza de un bloque que no puede funcionar independientemente.
+modificador -> Objetivo que utilizemos el menor numero de codigo posible para conseguir el resultato que buscamos. se declaran con --
+
+bloque -> Nombre identificativo
+elemento -> nombre identificativo __  (Los botones siempre suelen ser bloques sin __ para poderlos reutilizar en mas sitios) ->
+
+
+
+
+SASS --> 
+
+
+
+--- Adjuntar al achivo principal --> Queja
+* Problema de las media query que nunca hemos utilizado el media screen para evitar problemas de accessibilidad y se aplica en sitios donde no deberia aplicarse
+* Normalmente ral border radius va en Rem y no en Px!!
+* Media hover:hover nunca hecho! Esto es un hover muy mal hecho!
+* Col y grid para el flex -> No se usa! se usa el display grid directamente y no se hacen grid en display flex
+* Medidas, siempre hay que utilizar REM o la mayoria de las veces. px para cosas especificas y muy concretas. siempre hemos utilizado px y algunas veces el EM que tiene una explicacion mas complicada que la que teniamos ya que se ajusta al font-size del contenedor padre.
+* Sass compilation muy mal utilizado -> No se utiliza el Watch Sass para compilar! Se utilizan Plantillas como VITE. sistema de paquetes nunca utilizados ni visto en clase.
+* import no se usa desde hace 2 años -> Ahora USE -> NUNCA visto
+* Variables hay que utilizar casi siempre variables de la root y no variables de SASS -> variables css vista solo un dia y luego siempre hemos usado variables scss
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+
+*/
+
+.card {
+  width: 250px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+  background-color: orange;
+}
+
+.card--secondary {
+  color: white;
+  background-color: purple;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+}
+
+.button--rounded {
+  border-radius: 1rem;
+}
