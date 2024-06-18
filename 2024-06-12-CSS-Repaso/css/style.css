@@ -41,7 +41,27 @@ Box-shadow: offSetX offSetY blur spread color --> Siempre mantienen el tamaño d
     
 
 
+Display flex
 
+propriedades
+
+-Justify content : eje principal que se puede controlar con el flex-direction --> row- row-reverse - column- column-reverse
+    -Flex start : coloca los elementos al principio del eje principal
+    -Flex End: coloca los elementos al final de todo
+    -center: en el centro del eje principla
+    -space-[beetwen]: 
+        beetween: 1 al principio, 1 al final del eje y el resto lo distribuye en el espacio que queda
+     -space-[around]: Reparte el espacio disponible entre los elementos restantes dejando el mismo espacio entre
+        elementos pero dejando la mitad de ese espacio al principio y al final del elemento.  
+    -space-[around]: lo mismo del araung solo que dejar la mitad del hueco deja el mismo hueco
+-align items: eje secundario. solo se pueden colocar elementos con align items
+    - flex-start
+    - flex-end
+    - center
+    - stretch --> valor por defecto que rompe todo - estira el elemento para que ocupa toro el ancho del contenedor
+-gap: para da espacio a los elementos. Es capaz de darte espacio entre elemnto sin afectar a los lados !! Nunca (o casi nunca) hay que utilizar margin
+- un margin auto dentro del flex lo que hace es crear un margen en la direccion que le digas hasta su hermano
+    
 
 
 
@@ -50,6 +70,666 @@ Box-shadow: offSetX offSetY blur spread color --> Siempre mantienen el tamaño d
 
 
 --- Para la queja
+
+---->Objetivos Escuela Trazos:
+01/ Diseño Web vs Programación web.
+• Lenguajes de programación web y su aplicación a
+proyectos. Perfiles: Frontend, Backend, Mean y Fullstack.
+• Análisis de tendencias en programación web.
+• Fases del proceso web.
+• Conceptualización gráfica.
+• Layouts y tipos de estructura.
+• El color en la web.
+• Principios de usabilidad (UX / UI).
+02/ HTML5.
+• Introducción al lenguaje HTML 5.
+• Uso semántico de las etiquetas.
+• Estructura: header, footer, main, section, article
+y aside. • Texto: Strong, span y em.
+• Enlaces.
+• Imágenes y Picture.
+• Imágenes SVG: Imagen vs Código.
+• Etiquetas Vídeo y Audio.
+• iFrames.
+• Listas.
+• Tablas.
+• Formularios.
+• Atributos data.
+• Etiquetas Meta.
+• Meta Open Graph.
+03/ CSS3.
+• Selectores: Básicos, Avanzados,
+Pseudoelementos (before/after).
+• Unidades de medida: básicas, avanzadas y función calc().
+• Tipografía: @font-face y Google Fonts.
+• Maquetación en Flex.
+• Maquetación en Grid.
+• Transition.
+• Animation + @keyframes.
+• Custom properties: variables en CSS.
+• Responsive: @media.
+• Metodología BEM.
+04/ Transpiladores: SASS y SCSS.
+• Introducción a preprocesadores y Task Runners.
+• Usando Prepros.
+• Anidación de elementos.
+• Variables en SASS.
+• Usando Mixins.
+05/ Javascript.
+• Diferencias entre Javascript Nativo vs ECMAScript vs Typescript.
+• Introducción a las bases de la programación funcional y POO.
+• Estado de Javascript: Webs vs Aplicaciones.
+• Variables: let,const, var.
+• Funciones: parámetros e invocación.
+• Estructuras lógicas: bucles y condicionales.
+06/ jQuery en empresas.
+• Introducción y porqué se sigue usando.
+• Selectores.
+• Eventos.
+• Efectos de Javascript junto a CSS.
+07/ Banners.
+• Introducción: Qué son y uso en empresas.
+• Tipos de banners y formatos. Introduciendo ClickTag.
+08/ Newsletter.
+• Introducción: Qué son y uso en empresas.
+• MJML.io: Preprocesador de newsletters.
+09/ Introducción a PHP.
+• Introducción a PHP 7: Qué es y para qué sirve.
+• MAMP como servidor.
+10/ WordPress.
+• Introducción a CMS: Wordpress.
+• Wordpress Panel de control.
+• Wordpress Páginas, Entradas y Configuración.
+• Wordpress Temas vs Plugins.
+11/ Subida a Producción.
+• Clásicos vs Paas.
+• Hosting, dominio y proveedores.
+• Subida de archivos por FTP.
+12/ GIT.
+• Introducción.
+• Comandos básicos: init, add, commit, push y pull.
+• Ramas: branch y merge.
+• Aplicaciones GIT: Github Desktop y Bitbucket.
+13/ Búsqueda de empleo.
+• Preparación de tu perfil de Github.
+• Preparación de tu perfil de LinkedIn.
+• Pruebas lógicas de preparación
+01/ Diseño Web vs Programación web.
+• Lenguajes de programación web y su aplicación a
+proyectos. Perfiles: Frontend, Backend, Mean y Fullstack.
+• Análisis de tendencias en programación web.
+• Fases del proceso web.
+• Conceptualización gráfica.
+• Layouts y tipos de estructura.
+• El color en la web.
+• Principios de usabilidad (UX / UI).
+02/ HTML5.
+• Introducción al lenguaje HTML 5.
+• Uso semántico de las etiquetas.
+• Estructura: header, footer, main, section, article
+y aside. • Texto: Strong, span y em.
+• Enlaces.
+• Imágenes y Picture.
+• Imágenes SVG: Imagen vs Código.
+• Etiquetas Vídeo y Audio.
+• iFrames.
+• Listas.
+• Tablas.
+• Formularios.
+• Atributos data.
+• Etiquetas Meta.
+• Meta Open Graph.
+03/ CSS3.
+• Selectores: Básicos, Avanzados,
+Pseudoelementos (before/after).
+• Unidades de medida: básicas, avanzadas y función calc().
+• Tipografía: @font-face y Google Fonts.
+• Maquetación en Flex.
+• Maquetación en Grid.
+• Transition.
+• Animation + @keyframes.
+• Custom properties: variables en CSS.
+• Responsive: @media.
+• Metodología BEM.
+04/ Transpiladores: SASS y SCSS.
+• Introducción a preprocesadores y Task Runners.
+• Usando Prepros.
+• Anidación de elementos.
+• Variables en SASS.
+• Usando Mixins.
+05/ Javascript.
+• Diferencias entre Javascript Nativo vs ECMAScript vs Typescript.
+• Introducción a las bases de la programación funcional y POO.
+• Estado de Javascript: Webs vs Aplicaciones.
+• Variables: let,const, var.
+• Funciones: parámetros e invocación.
+• Estructuras lógicas: bucles y condicionales.
+06/ jQuery en empresas.
+• Introducción y porqué se sigue usando.
+• Selectores.
+• Eventos.
+• Efectos de Javascript junto a CSS.
+07/ Banners.
+• Introducción: Qué son y uso en empresas.
+• Tipos de banners y formatos. Introduciendo ClickTag.
+08/ Newsletter.
+• Introducción: Qué son y uso en empresas.
+• MJML.io: Preprocesador de newsletters.
+09/ Introducción a PHP.
+• Introducción a PHP 7: Qué es y para qué sirve.
+• MAMP como servidor.
+10/ WordPress.
+• Introducción a CMS: Wordpress.
+• Wordpress Panel de control.
+• Wordpress Páginas, Entradas y Configuración.
+• Wordpress Temas vs Plugins.
+11/ Subida a Producción.
+• Clásicos vs Paas.
+• Hosting, dominio y proveedores.
+• Subida de archivos por FTP.
+12/ GIT.
+• Introducción.
+• Comandos básicos: init, add, commit, push y pull.
+• Ramas: branch y merge.
+• Aplicaciones GIT: Github Desktop y Bitbucket.
+13/ Búsqueda de empleo.
+• Preparación de tu perfil de Github.
+• Preparación de tu perfil de LinkedIn.
+• Pruebas lógicas de preparación
+01/ Diseño Web vs Programación web.
+• Lenguajes de programación web y su aplicación a
+proyectos. Perfiles: Frontend, Backend, Mean y Fullstack.
+• Análisis de tendencias en programación web.
+• Fases del proceso web.
+• Conceptualización gráfica.
+• Layouts y tipos de estructura.
+• El color en la web.
+• Principios de usabilidad (UX / UI).
+02/ HTML5.
+• Introducción al lenguaje HTML 5.
+• Uso semántico de las etiquetas.
+• Estructura: header, footer, main, section, article
+y aside. • Texto: Strong, span y em.
+• Enlaces.
+• Imágenes y Picture.
+• Imágenes SVG: Imagen vs Código.
+• Etiquetas Vídeo y Audio.
+• iFrames.
+• Listas.
+• Tablas.
+• Formularios.
+• Atributos data.
+• Etiquetas Meta.
+• Meta Open Graph.
+03/ CSS3.
+• Selectores: Básicos, Avanzados,
+Pseudoelementos (before/after).
+• Unidades de medida: básicas, avanzadas y función calc().
+• Tipografía: @font-face y Google Fonts.
+• Maquetación en Flex.
+• Maquetación en Grid.
+• Transition.
+• Animation + @keyframes.
+• Custom properties: variables en CSS.
+• Responsive: @media.
+• Metodología BEM.
+04/ Transpiladores: SASS y SCSS.
+• Introducción a preprocesadores y Task Runners.
+• Usando Prepros.
+• Anidación de elementos.
+• Variables en SASS.
+• Usando Mixins.
+05/ Javascript.
+• Diferencias entre Javascript Nativo vs ECMAScript vs Typescript.
+• Introducción a las bases de la programación funcional y POO.
+• Estado de Javascript: Webs vs Aplicaciones.
+• Variables: let,const, var.
+• Funciones: parámetros e invocación.
+• Estructuras lógicas: bucles y condicionales.
+06/ jQuery en empresas.
+• Introducción y porqué se sigue usando.
+• Selectores.
+• Eventos.
+• Efectos de Javascript junto a CSS.
+07/ Banners.
+• Introducción: Qué son y uso en empresas.
+• Tipos de banners y formatos. Introduciendo ClickTag.
+08/ Newsletter.
+• Introducción: Qué son y uso en empresas.
+• MJML.io: Preprocesador de newsletters.
+09/ Introducción a PHP.
+• Introducción a PHP 7: Qué es y para qué sirve.
+• MAMP como servidor.
+10/ WordPress.
+• Introducción a CMS: Wordpress.
+• Wordpress Panel de control.
+• Wordpress Páginas, Entradas y Configuración.
+• Wordpress Temas vs Plugins.
+11/ Subida a Producción.
+• Clásicos vs Paas.
+• Hosting, dominio y proveedores.
+• Subida de archivos por FTP.
+12/ GIT.
+• Introducción.
+• Comandos básicos: init, add, commit, push y pull.
+• Ramas: branch y merge.
+• Aplicaciones GIT: Github Desktop y Bitbucket.
+13/ Búsqueda de empleo.
+• Preparación de tu perfil de Github.
+• Preparación de tu perfil de LinkedIn.
+• Pruebas lógicas de preparación
+01/ Diseño Web vs Programación web.
+• Lenguajes de programación web y su aplicación a
+proyectos. Perfiles: Frontend, Backend, Mean y Fullstack.
+• Análisis de tendencias en programación web.
+• Fases del proceso web.
+• Conceptualización gráfica.
+• Layouts y tipos de estructura.
+• El color en la web.
+• Principios de usabilidad (UX / UI).
+02/ HTML5.
+• Introducción al lenguaje HTML 5.
+• Uso semántico de las etiquetas.
+• Estructura: header, footer, main, section, article
+y aside. • Texto: Strong, span y em.
+• Enlaces.
+• Imágenes y Picture.
+• Imágenes SVG: Imagen vs Código.
+• Etiquetas Vídeo y Audio.
+• iFrames.
+• Listas.
+• Tablas.
+• Formularios.
+• Atributos data.
+• Etiquetas Meta.
+• Meta Open Graph.
+03/ CSS3.
+• Selectores: Básicos, Avanzados,
+Pseudoelementos (before/after).
+• Unidades de medida: básicas, avanzadas y función calc().
+• Tipografía: @font-face y Google Fonts.
+• Maquetación en Flex.
+• Maquetación en Grid.
+• Transition.
+• Animation + @keyframes.
+• Custom properties: variables en CSS.
+• Responsive: @media.
+• Metodología BEM.
+04/ Transpiladores: SASS y SCSS.
+• Introducción a preprocesadores y Task Runners.
+• Usando Prepros.
+• Anidación de elementos.
+• Variables en SASS.
+• Usando Mixins.
+05/ Javascript.
+• Diferencias entre Javascript Nativo vs ECMAScript vs Typescript.
+• Introducción a las bases de la programación funcional y POO.
+• Estado de Javascript: Webs vs Aplicaciones.
+• Variables: let,const, var.
+• Funciones: parámetros e invocación.
+• Estructuras lógicas: bucles y condicionales.
+06/ jQuery en empresas.
+• Introducción y porqué se sigue usando.
+• Selectores.
+• Eventos.
+• Efectos de Javascript junto a CSS.
+07/ Banners.
+• Introducción: Qué son y uso en empresas.
+• Tipos de banners y formatos. Introduciendo ClickTag.
+08/ Newsletter.
+• Introducción: Qué son y uso en empresas.
+• MJML.io: Preprocesador de newsletters.
+09/ Introducción a PHP.
+• Introducción a PHP 7: Qué es y para qué sirve.
+• MAMP como servidor.
+10/ WordPress.
+• Introducción a CMS: Wordpress.
+• Wordpress Panel de control.
+• Wordpress Páginas, Entradas y Configuración.
+• Wordpress Temas vs Plugins.
+11/ Subida a Producción.
+• Clásicos vs Paas.
+• Hosting, dominio y proveedores.
+• Subida de archivos por FTP.
+12/ GIT.
+• Introducción.
+• Comandos básicos: init, add, commit, push y pull.
+• Ramas: branch y merge.
+• Aplicaciones GIT: Github Desktop y Bitbucket.
+13/ Búsqueda de empleo.
+• Preparación de tu perfil de Github.
+• Preparación de tu perfil de LinkedIn.
+• Pruebas lógicas de preparación
+01/ Diseño Web vs Programación web.
+• Lenguajes de programación web y su aplicación a
+proyectos. Perfiles: Frontend, Backend, Mean y Fullstack.
+• Análisis de tendencias en programación web.
+• Fases del proceso web.
+• Conceptualización gráfica.
+• Layouts y tipos de estructura.
+• El color en la web.
+• Principios de usabilidad (UX / UI).
+02/ HTML5.
+• Introducción al lenguaje HTML 5.
+• Uso semántico de las etiquetas.
+• Estructura: header, footer, main, section, article
+y aside. • Texto: Strong, span y em.
+• Enlaces.
+• Imágenes y Picture.
+• Imágenes SVG: Imagen vs Código.
+• Etiquetas Vídeo y Audio.
+• iFrames.
+• Listas.
+• Tablas.
+• Formularios.
+• Atributos data.
+• Etiquetas Meta.
+• Meta Open Graph.
+03/ CSS3.
+• Selectores: Básicos, Avanzados,
+Pseudoelementos (before/after).
+• Unidades de medida: básicas, avanzadas y función calc().
+• Tipografía: @font-face y Google Fonts.
+• Maquetación en Flex.
+• Maquetación en Grid.
+• Transition.
+• Animation + @keyframes.
+• Custom properties: variables en CSS.
+• Responsive: @media.
+• Metodología BEM.
+04/ Transpiladores: SASS y SCSS.
+• Introducción a preprocesadores y Task Runners.
+• Usando Prepros.
+• Anidación de elementos.
+• Variables en SASS.
+• Usando Mixins.
+05/ Javascript.
+• Diferencias entre Javascript Nativo vs ECMAScript vs Typescript.
+• Introducción a las bases de la programación funcional y POO.
+• Estado de Javascript: Webs vs Aplicaciones.
+• Variables: let,const, var.
+• Funciones: parámetros e invocación.
+• Estructuras lógicas: bucles y condicionales.
+06/ jQuery en empresas.
+• Introducción y porqué se sigue usando.
+• Selectores.
+• Eventos.
+• Efectos de Javascript junto a CSS.
+07/ Banners.
+• Introducción: Qué son y uso en empresas.
+• Tipos de banners y formatos. Introduciendo ClickTag.
+08/ Newsletter.
+• Introducción: Qué son y uso en empresas.
+• MJML.io: Preprocesador de newsletters.
+09/ Introducción a PHP.
+• Introducción a PHP 7: Qué es y para qué sirve.
+• MAMP como servidor.
+10/ WordPress.
+• Introducción a CMS: Wordpress.
+• Wordpress Panel de control.
+• Wordpress Páginas, Entradas y Configuración.
+• Wordpress Temas vs Plugins.
+11/ Subida a Producción.
+• Clásicos vs Paas.
+• Hosting, dominio y proveedores.
+• Subida de archivos por FTP.
+12/ GIT.
+• Introducción.
+• Comandos básicos: init, add, commit, push y pull.
+• Ramas: branch y merge.
+• Aplicaciones GIT: Github Desktop y Bitbucket.
+13/ Búsqueda de empleo.
+• Preparación de tu perfil de Github.
+• Preparación de tu perfil de LinkedIn.
+• Pruebas lógicas de preparación
+01/ Diseño Web vs Programación web.
+• Lenguajes de programación web y su aplicación a
+proyectos. Perfiles: Frontend, Backend, Mean y Fullstack.
+• Análisis de tendencias en programación web.
+• Fases del proceso web.
+• Conceptualización gráfica.
+• Layouts y tipos de estructura.
+• El color en la web.
+• Principios de usabilidad (UX / UI).
+02/ HTML5.
+• Introducción al lenguaje HTML 5.
+• Uso semántico de las etiquetas.
+• Estructura: header, footer, main, section, article
+y aside. • Texto: Strong, span y em.
+• Enlaces.
+• Imágenes y Picture.
+• Imágenes SVG: Imagen vs Código.
+• Etiquetas Vídeo y Audio.
+• iFrames.
+• Listas.
+• Tablas.
+• Formularios.
+• Atributos data.
+• Etiquetas Meta.
+• Meta Open Graph.
+03/ CSS3.
+• Selectores: Básicos, Avanzados,
+Pseudoelementos (before/after).
+• Unidades de medida: básicas, avanzadas y función calc().
+• Tipografía: @font-face y Google Fonts.
+• Maquetación en Flex.
+• Maquetación en Grid.
+• Transition.
+• Animation + @keyframes.
+• Custom properties: variables en CSS.
+• Responsive: @media.
+• Metodología BEM.
+04/ Transpiladores: SASS y SCSS.
+• Introducción a preprocesadores y Task Runners.
+• Usando Prepros.
+• Anidación de elementos.
+• Variables en SASS.
+• Usando Mixins.
+05/ Javascript.
+• Diferencias entre Javascript Nativo vs ECMAScript vs Typescript.
+• Introducción a las bases de la programación funcional y POO.
+• Estado de Javascript: Webs vs Aplicaciones.
+• Variables: let,const, var.
+• Funciones: parámetros e invocación.
+• Estructuras lógicas: bucles y condicionales.
+06/ jQuery en empresas.
+• Introducción y porqué se sigue usando.
+• Selectores.
+• Eventos.
+• Efectos de Javascript junto a CSS.
+07/ Banners.
+• Introducción: Qué son y uso en empresas.
+• Tipos de banners y formatos. Introduciendo ClickTag.
+08/ Newsletter.
+• Introducción: Qué son y uso en empresas.
+• MJML.io: Preprocesador de newsletters.
+09/ Introducción a PHP.
+• Introducción a PHP 7: Qué es y para qué sirve.
+• MAMP como servidor.
+10/ WordPress.
+• Introducción a CMS: Wordpress.
+• Wordpress Panel de control.
+• Wordpress Páginas, Entradas y Configuración.
+• Wordpress Temas vs Plugins.
+11/ Subida a Producción.
+• Clásicos vs Paas.
+• Hosting, dominio y proveedores.
+• Subida de archivos por FTP.
+12/ GIT.
+• Introducción.
+• Comandos básicos: init, add, commit, push y pull.
+• Ramas: branch y merge.
+• Aplicaciones GIT: Github Desktop y Bitbucket.
+13/ Búsqueda de empleo.
+• Preparación de tu perfil de Github.
+• Preparación de tu perfil de LinkedIn.
+• Pruebas lógicas de preparación
+01/ Diseño Web vs Programación web.
+• Lenguajes de programación web y su aplicación a
+proyectos. Perfiles: Frontend, Backend, Mean y Fullstack.
+• Análisis de tendencias en programación web.
+• Fases del proceso web.
+• Conceptualización gráfica.
+• Layouts y tipos de estructura.
+• El color en la web.
+• Principios de usabilidad (UX / UI).
+02/ HTML5.
+• Introducción al lenguaje HTML 5.
+• Uso semántico de las etiquetas.
+• Estructura: header, footer, main, section, article
+y aside. • Texto: Strong, span y em.
+• Enlaces.
+• Imágenes y Picture.
+• Imágenes SVG: Imagen vs Código.
+• Etiquetas Vídeo y Audio.
+• iFrames.
+• Listas.
+• Tablas.
+• Formularios.
+• Atributos data.
+• Etiquetas Meta.
+• Meta Open Graph.
+03/ CSS3.
+• Selectores: Básicos, Avanzados,
+Pseudoelementos (before/after).
+• Unidades de medida: básicas, avanzadas y función calc().
+• Tipografía: @font-face y Google Fonts.
+• Maquetación en Flex.
+• Maquetación en Grid.
+• Transition.
+• Animation + @keyframes.
+• Custom properties: variables en CSS.
+• Responsive: @media.
+• Metodología BEM.
+04/ Transpiladores: SASS y SCSS.
+• Introducción a preprocesadores y Task Runners.
+• Usando Prepros.
+• Anidación de elementos.
+• Variables en SASS.
+• Usando Mixins.
+05/ Javascript.
+• Diferencias entre Javascript Nativo vs ECMAScript vs Typescript.
+• Introducción a las bases de la programación funcional y POO.
+• Estado de Javascript: Webs vs Aplicaciones.
+• Variables: let,const, var.
+• Funciones: parámetros e invocación.
+• Estructuras lógicas: bucles y condicionales.
+06/ jQuery en empresas.
+• Introducción y porqué se sigue usando.
+• Selectores.
+• Eventos.
+• Efectos de Javascript junto a CSS.
+07/ Banners.
+• Introducción: Qué son y uso en empresas.
+• Tipos de banners y formatos. Introduciendo ClickTag.
+08/ Newsletter.
+• Introducción: Qué son y uso en empresas.
+• MJML.io: Preprocesador de newsletters.
+09/ Introducción a PHP.
+• Introducción a PHP 7: Qué es y para qué sirve.
+• MAMP como servidor.
+10/ WordPress.
+• Introducción a CMS: Wordpress.
+• Wordpress Panel de control.
+• Wordpress Páginas, Entradas y Configuración.
+• Wordpress Temas vs Plugins.
+11/ Subida a Producción.
+• Clásicos vs Paas.
+• Hosting, dominio y proveedores.
+• Subida de archivos por FTP.
+12/ GIT.
+• Introducción.
+• Comandos básicos: init, add, commit, push y pull.
+• Ramas: branch y merge.
+• Aplicaciones GIT: Github Desktop y Bitbucket.
+13/ Búsqueda de empleo.
+• Preparación de tu perfil de Github.
+• Preparación de tu perfil de LinkedIn.
+• Pruebas lógicas de preparación
+01/ Diseño Web vs Programación web.
+• Lenguajes de programación web y su aplicación a
+proyectos. Perfiles: Frontend, Backend, Mean y Fullstack.
+• Análisis de tendencias en programación web.
+• Fases del proceso web.
+• Conceptualización gráfica.
+• Layouts y tipos de estructura.
+• El color en la web.
+• Principios de usabilidad (UX / UI).
+02/ HTML5.
+• Introducción al lenguaje HTML 5.
+• Uso semántico de las etiquetas.
+• Estructura: header, footer, main, section, article
+y aside. • Texto: Strong, span y em.
+• Enlaces.
+• Imágenes y Picture.
+• Imágenes SVG: Imagen vs Código.
+• Etiquetas Vídeo y Audio.
+• iFrames.
+• Listas.
+• Tablas.
+• Formularios.
+• Atributos data.
+• Etiquetas Meta.
+• Meta Open Graph.
+03/ CSS3.
+• Selectores: Básicos, Avanzados,
+Pseudoelementos (before/after).
+• Unidades de medida: básicas, avanzadas y función calc().
+• Tipografía: @font-face y Google Fonts.
+• Maquetación en Flex.
+• Maquetación en Grid.
+• Transition.
+• Animation + @keyframes.
+• Custom properties: variables en CSS.
+• Responsive: @media.
+• Metodología BEM.
+04/ Transpiladores: SASS y SCSS.
+• Introducción a preprocesadores y Task Runners.
+• Usando Prepros.
+• Anidación de elementos.
+• Variables en SASS.
+• Usando Mixins.
+05/ Javascript.
+• Diferencias entre Javascript Nativo vs ECMAScript vs Typescript.
+• Introducción a las bases de la programación funcional y POO.
+• Estado de Javascript: Webs vs Aplicaciones.
+• Variables: let,const, var.
+• Funciones: parámetros e invocación.
+• Estructuras lógicas: bucles y condicionales.
+06/ jQuery en empresas.
+• Introducción y porqué se sigue usando.
+• Selectores.
+• Eventos.
+• Efectos de Javascript junto a CSS.
+07/ Banners.
+• Introducción: Qué son y uso en empresas.
+• Tipos de banners y formatos. Introduciendo ClickTag.
+08/ Newsletter.
+• Introducción: Qué son y uso en empresas.
+• MJML.io: Preprocesador de newsletters.
+09/ Introducción a PHP.
+• Introducción a PHP 7: Qué es y para qué sirve.
+• MAMP como servidor.
+10/ WordPress.
+• Introducción a CMS: Wordpress.
+• Wordpress Panel de control.
+• Wordpress Páginas, Entradas y Configuración.
+• Wordpress Temas vs Plugins.
+11/ Subida a Producción.
+• Clásicos vs Paas.
+• Hosting, dominio y proveedores.
+• Subida de archivos por FTP.
+12/ GIT.
+• Introducción.
+• Comandos básicos: init, add, commit, push y pull.
+• Ramas: branch y merge.
+• Aplicaciones GIT: Github Desktop y Bitbucket.
+13/ Búsqueda de empleo.
+• Preparación de tu perfil de Github.
+• Preparación de tu perfil de LinkedIn.
+• Pruebas lógicas de preparación
+
+
 * Objetivos a lograr del ppw
 * Criterios de relacion y orden
 * Css --> Carpeta Css -> File siempre style.css / index  --> Siempre utilizado estilos.css y home.html ERROR para errorer en * servidores -> Los servidores solo son capaces de leer un archivo de inicio index.html, si es otro NO vale
@@ -65,8 +745,8 @@ Box-shadow: offSetX offSetY blur spread color --> Siempre mantienen el tamaño d
 * Hay que utilizar el position absolute como ultimo remedio si no queda otra. Siempre lo hemos utilizado para posicionar texto arriba de img y es una mala practica
 * ::after ::before  --> Nunca lo hemos visto y es SUPER importante pare crear efectos visuales
 * Box shadow - gradiente nunca explicado -> Simplemente generarlo de una pagina web, copiar y pegar
-* 
-* 
+* Diplay flex -> Ningun tipo de información -> Solo una imagen de CSS TRICK copiada y pegada con enlace para ver información si no entendiamo algo de la imagen que ha subido
+* Explicación del flex para usar margin auto para alinear items como deseamos
 * 
 * 
 * 
@@ -109,3 +789,49 @@ Box-shadow: offSetX offSetY blur spread color --> Siempre mantienen el tamaño d
 
 
 /* BOX MODEL --> base del css. cuando tenemos un elemento y le aplicamos medidas estas medidas se aplican a la caja*/
+
+a{text-decoration: none;
+color: inherit;}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+    margin-block: 0;
+}
+
+/*
+.nav__ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Item-1, .Item-2 {
+    order: 1;
+}
+
+.Item-3{
+    order: 2; 
+    margin: 0 auto;
+}
+
+.Item-4, .Item-5 {
+    order: 3; 
+}
+*/
+
+.menu{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+.menu__item--center{
+    margin-inline: auto;
+    /*
+        Otra opcion:
+        flex-grow: 1;
+        text-align:center;
+    */
+}
+
